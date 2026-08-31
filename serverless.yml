@@ -23,8 +23,8 @@ build:
 
 functions:
   hello:
-    handler: src/hello.handler
+    handler: src/main/functions/hello.handler
     events:
       - httpApi:
-          path: /
-          method: GET
+          path: /hello/{id}
+          method: POST

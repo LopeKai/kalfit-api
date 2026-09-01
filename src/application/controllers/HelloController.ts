@@ -1,8 +1,7 @@
-import { IHpptRequest } from '../contracts/HttpRequest';
-import { IHttpResponse } from '../contracts/HttpResponse';
+import { IController } from '../contracts/Controller';
 
-export class HelloController {
-    async handle(request: IHpptRequest): Promise<IHttpResponse<unknown>> {
+export class HelloController implements IController<unknown>{
+    async handle(request: IController.Request): Promise<IController.Response<unknown>> {
         return {
             statusCode: 200,
             body: {
